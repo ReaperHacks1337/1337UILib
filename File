@@ -673,9 +673,6 @@ function Luxt1.CreateWindow(libName, logoId)
                             if not ok then 
                                 if current.KeyCode.Name == oldKey then 
                                     callback()
-                                    keybindFrame:TweenSize(UDim2.new(0, 359,0, 30), "InOut", "Quint", 0.18, true)
-                                    wait(0.18)
-                                    keybindFrame:TweenSize(UDim2.new(0, 365,0, 36), "InOut", "Quint", 0.18, true)
                                 end
                             end
                         end)
