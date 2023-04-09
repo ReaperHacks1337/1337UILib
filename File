@@ -573,20 +573,19 @@ function Luxt1.CreateWindow(libName, logoId)
 
                     local on = false
                     checkBtn.MouseButton1Click:Connect(function()
-                                on = not on
-                                 callback(on) 
-                                if on then
-                                    checkBtn.Parent.toggleInfo.TextColor3 = Color3.fromRGB(153, 255, 238)
-                                    checkBtn.ImageColor3 = Color3.fromRGB(153, 255, 238)
-                                    checkBtn.ImageRectOffset = Vector2.new(4, 836)
-                                    checkBtn.ImageRectSize = Vector2.new(48,48)
-                                else
-                                    checkBtn.Parent.toggleInfo.TextColor3 = Color3.fromRGB(97, 97, 97)
-                                    checkBtn.ImageColor3 = Color3.fromRGB(97, 97, 97)
-                                    checkBtn.ImageRectOffset = Vector2.new(940, 784)
-                                    checkBtn.ImageRectSize = Vector2.new(48,48)
-                                end
-                            end
+                        on = not on
+                         callback(on) 
+                        if on then
+                            checkBtn.Parent.toggleInfo.TextColor3 = Color3.fromRGB(153, 255, 238)
+                            checkBtn.ImageColor3 = Color3.fromRGB(153, 255, 238)
+                            checkBtn.ImageRectOffset = Vector2.new(4, 836)
+                            checkBtn.ImageRectSize = Vector2.new(48,48)
+                        else
+                            checkBtn.Parent.toggleInfo.TextColor3 = Color3.fromRGB(97, 97, 97)
+                            checkBtn.ImageColor3 = Color3.fromRGB(97, 97, 97)
+                            checkBtn.ImageRectOffset = Vector2.new(940, 784)
+                            checkBtn.ImageRectSize = Vector2.new(48,48)
+                        end
                     end)
 
                     checkBtn.MouseButton1Up:Connect(function()
