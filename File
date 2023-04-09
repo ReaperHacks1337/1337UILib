@@ -572,10 +572,7 @@ function Luxt1.CreateWindow(libName, logoId)
                     UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 
                     local on = false
-                    local togDe = false
                     checkBtn.MouseButton1Click:Connect(function()
-                        if not togDe then
-                                togDe = true
                                 on = not on
                                  callback(on) 
                                 if on then
@@ -589,8 +586,6 @@ function Luxt1.CreateWindow(libName, logoId)
                                     checkBtn.ImageRectOffset = Vector2.new(940, 784)
                                     checkBtn.ImageRectSize = Vector2.new(48,48)
                                 end
-                                wait(1)
-                                togDe = false
                             end
                     end)
 
