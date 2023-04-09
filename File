@@ -446,16 +446,9 @@ function Luxt1.CreateWindow(libName, logoId)
                 TextButton.Font = Enum.Font.GothamSemibold
                 TextButton.TextColor3 = Color3.fromRGB(180, 180, 180)
                 TextButton.TextSize = 14.000
-
-                local debounce = false
-                local debounce1 = false
+                
                 TextButton.MouseButton1Click:Connect(function()
-                    if not debounce then
-                        debounce = true
-                        callback()
-                        wait(1)
-                        debounce = false
-                    end
+                    callback()
                 end)
 
                 UICorner.CornerRadius = UDim.new(0, 3)
@@ -475,16 +468,11 @@ function Luxt1.CreateWindow(libName, logoId)
                 end)
                 
                 TextButton.MouseButton1Down:Connect(function()
-                    if not debounce1 then
-                        debounce1 = true
-                        TextButton:TweenSize(UDim2.new(0, 359,0, 30), "InOut", "Quint", 0.18, true)
-                        game.TweenService:Create(TextButton, TweenInfo.new(0.18, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),{
-                            BackgroundColor3 = Color3.fromRGB(101, 168, 157),
-                            TextColor3 = Color3.fromRGB(0,0,0)
-                        }):Play()
-                        wait(1)
-                        debounce1 = false
-                    end
+                    TextButton:TweenSize(UDim2.new(0, 359,0, 30), "InOut", "Quint", 0.18, true)
+                    game.TweenService:Create(TextButton, TweenInfo.new(0.18, Enum.EasingStyle.Linear, Enum.EasingDirection.Out),{
+                        BackgroundColor3 = Color3.fromRGB(101, 168, 157),
+                        TextColor3 = Color3.fromRGB(0,0,0)
+                    }):Play()
                 end)
                 
                 TextButton.MouseEnter:Connect(function()
@@ -681,19 +669,13 @@ function Luxt1.CreateWindow(libName, logoId)
                                 oldKey = a.KeyCode.Name;
                             end
                         end)
-                        local keyDebounce = false
                         game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
                             if not ok then 
                                 if current.KeyCode.Name == oldKey then 
-                                    if not keyDebounce then
-                                        keyDebounce = true
-                                        callback()
-                                        keybindFrame:TweenSize(UDim2.new(0, 359,0, 30), "InOut", "Quint", 0.18, true)
-                                        wait(0.18)
-                                        keybindFrame:TweenSize(UDim2.new(0, 365,0, 36), "InOut", "Quint", 0.18, true)
-                                        wait(0.5)
-                                        keyDebounce = false
-                                    end
+                                    callback()
+                                    keybindFrame:TweenSize(UDim2.new(0, 359,0, 30), "InOut", "Quint", 0.18, true)
+                                    wait(0.18)
+                                    keybindFrame:TweenSize(UDim2.new(0, 365,0, 36), "InOut", "Quint", 0.18, true)
                                 end
                             end
                         end)
